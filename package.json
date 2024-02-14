@@ -1,0 +1,71 @@
+{
+  "name": "ember-codemod-transition-methods",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Small description for ember-codemod-transition-methods goes here",
+  "keywords": [
+    "codemod",
+    "ember-codemod",
+    "emberjs"
+  ],
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "bin": "dist/bin/ember-codemod-transition-methods.js",
+  "directories": {
+    "test": "tests"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "./build.sh --production",
+    "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
+    "prepare": "pnpm build",
+    "release:changelog": "changeset version",
+    "release:publish": "pnpm build && changeset publish",
+    "test": "./build.sh --test && mt dist-for-testing --quiet"
+  },
+  "dependencies": {
+    "@codemod-utils/files": "^1.1.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@changesets/cli": "^2.27.1",
+    "@changesets/get-github-info": "^0.6.0",
+    "@codemod-utils/tests": "^1.1.1",
+    "@sondr3/minitest": "^0.1.2",
+    "@tsconfig/node18": "^18.2.2",
+    "@tsconfig/strictest": "^2.0.2",
+    "@types/node": "^18.19.3",
+    "@types/yargs": "^17.0.32",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.4.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-typescript-sort-keys": "^3.1.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": "18.* || >= 20"
+  },
+  "pnpm": {
+    "overrides": {
+      "eslint-plugin-import@2.29.1>tsconfig-paths": "^4.2.0"
+    }
+  }
+}
