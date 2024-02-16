@@ -2,7 +2,7 @@
 
 # ember-codemod-transition-methods
 
-_Codemod to [PROVIDE A SHORT DESCRIPTION.]_
+Codemod for [0674 Deprecate transition methods of controller and route](https://rfcs.emberjs.com/id/0674-deprecate-transition-methods-of-controller-and-route/)
 
 
 ## Usage
